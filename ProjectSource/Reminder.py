@@ -1,4 +1,5 @@
 import datetime
+import time
 class Reminder:
     #Reminder
     #Date: Date python datetime format
@@ -6,4 +7,10 @@ class Reminder:
     def __init__(self,date,contents):
         self.date = date
         self.contents = contents
+    def gettime(self):
+        return self.date
+    def getcontents(self):
+        return self.contents
+    def content(self,newcontent):
+        self.contents = newcontent
     
