@@ -16,7 +16,7 @@ def remind(test):
 def driver(templist):
     myremind = templist[0]
     
-    schedule.every(2).seconds.do(remind,myremind)
+    schedule.every(myremind.gettime()).seconds.do(remind,myremind)
     while True:
         schedule.run_pending()
         time.sleep(1)
