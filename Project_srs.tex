@@ -1,0 +1,325 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+]{article}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\ifLuaTeX
+  \usepackage{luacolor}
+  \usepackage[soul]{lua-ul}
+\else
+  \usepackage{soul}
+\fi
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+\textbf{Software Requirements Specification}
+
+\textbf{Revision History}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1443}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2440}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2743}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3374}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Version}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Date}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Author}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\textbf{Change Description}
+\end{minipage} \\
+\begin{minipage}[b]{\linewidth}\raggedright
+1.0
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
+\begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\end{longtable}
+
+\textbf{TABLE OF CONTENTS}
+
+\begin{quote}
+\hyperref[section-1.-introduction]{\ul{INTRODUCTION}}
+
+\hyperref[_ixwp5se860rt]{\ul{Purpose}}
+
+\hyperref[documentation-conventions]{\ul{Scope}}
+
+\hyperref[intended-audience]{\ul{Overview}}
+
+\hyperref[_khs32z7vtz5h]{\ul{Definitions, Acronyms, and Abbreviations}}
+
+\hyperref[_frw4je31to8t]{\ul{References}}
+
+\hyperref[section-2.-general-description]{\ul{General Description}}
+
+\hyperref[system-analysis]{\ul{Product Perspective}}
+
+\hyperref[product-perspective]{\ul{Product Functions}}
+
+\hyperref[product-function]{\ul{User Characteristics}}
+
+\hyperref[general-constraints]{\ul{General Constraints}}
+
+\hyperref[assumptions-and-dependencies]{\ul{Assumptions and
+Dependencies}}
+
+\hyperref[section-3.-requirements-specification]{\ul{Requirements}}
+
+\hyperref[functional-requirements]{\ul{Functional Requirements}}
+
+\hyperref[external-interface-requirements]{\ul{External Interface
+Requirements}}
+
+\hyperref[_jb5ksphe16w2]{\ul{User Interfaces}}
+
+\hyperref[_eo0p461hhe3r]{\ul{Hardware Interfaces}}
+
+\hyperref[_fpu3ytfo7r1]{\ul{Software Interfaces}}
+
+\hyperref[_dxgri1jo8rz6]{\ul{Communications Interfaces}}
+
+\hyperref[_ucoyn2yvl6c3]{\ul{Performance Requirements}}
+
+\hyperref[design-constraints]{\ul{Design Constraints}}
+
+\hyperref[_kj9rygdikkwy]{\ul{Standards Compliance}}
+
+\hyperref[_i0u468c6zuoi]{\ul{Hardware Limitations}}
+
+\hyperref[nonfunctional-requirements]{\ul{Attributes}}
+
+\hyperref[performance]{\ul{Availability}}
+
+\hyperref[security]{\ul{Security}}
+
+\hyperref[_e5po9qanxzue]{\ul{Maintainability}}
+
+\hyperref[_rj4tlkisvdbj]{\ul{Transferability/Conversion}}
+
+\hyperref[other-requirements]{\ul{Other Requirements}}
+
+\hyperref[legal-requirements]{\ul{Operations}}
+
+\hyperref[ethical-requirements]{\ul{Site Adaptation}}
+
+\hyperref[appendixes]{\ul{Appendixes}}
+
+\hyperref[_clp35ii7xzat]{\ul{Annex 1: Characteristics of a good SRS}}
+
+\hyperref[_l587f99ytp53]{\ul{Annex 2: Organizing the specific
+requirements}}
+
+\hyperref[_lg3ompi10x86]{\ul{Annex 3: SRS templates}}
+
+\hyperref[_fq84tbgccxb3]{\ul{Template of SRS Section 3 organized by
+feature}}
+
+\hyperref[_vpigomc8pdzb]{\ul{Template of SRS Section 3 organized by user
+class}}
+
+\hyperref[_8avjwjy42bpe]{\ul{Template of SRS Section 3 showing multiple
+organizations}}
+\end{quote}
+
+\section{Section 1. INTRODUCTION}\label{section-1.-introduction}
+
+\section{Purpose}\label{purpose}
+
+This document is for identification of requirements for Want2Remember
+app by giving detailed explanation of the application and its purpose
+and how will users interact with the software
+
+\subsection{Documentation Conventions}\label{documentation-conventions}
+
+This document is intended for developers and the project managers as
+well as users to help understand requirements and parse information for
+the software.
+
+\subsection{Intended Audience}\label{intended-audience}
+
+Want2Remeber application is intended for users have some sort of mental
+or cognitive impairment that prevents from performing daily task
+
+\section{Section 2. General
+Description}\label{section-2.-general-description}
+
+\subsection{System Analysis}\label{system-analysis}
+
+People with Cognitive impairments would need assistance when it comes to
+task such as appointments,routines and medical treatment. The software
+should be able notify daily task, create schedules and sensitive data
+
+\subsection{Product Perspective}\label{product-perspective}
+
+Want2Remeber has a basic backend command line interface that is used for
+testing reminders including scheduling. A GUI interface that has
+features commonly seen in calendar and reminders apps is planned.
+
+\subsection{Product Function}\label{product-function}
+
+Home Menu: Initial Landing screen for access to current reminders as
+well as create or delete new one
+
+Reminders menu: Shows a list of reminders including dates and time as
+well as editing existing reminders
+
+Create/delete Menu: allows users to create reminders and delete them
+
+\subsection{General Constraints}\label{general-constraints}
+
+Python is the current language being used for the implementation of
+want2Remember any device that can run a python interpreter can run the
+Want2remeber
+
+\subsection{Assumptions and
+Dependencies}\label{assumptions-and-dependencies}
+
+It is generally assume that users may be able to access and use a device
+that can run a python interpreter
+
+\section{Section 3. Requirements
+Specification}\label{section-3.-requirements-specification}
+
+\subsection{Functional Requirements}\label{functional-requirements}
+
+Home Screen: The interface should be able to show all actions that a
+users could take.
+
+Reminder Screen: The Reminders screen shall be able to show at a glance
+all reminders that a User has made
+
+Create Screen: The Create menu should allow for creation and deletion of
+reminders
+
+Edit Screen: The Edit menu shall allow the user to editor delete a
+memory
+
+More Details Screen:The More Details menu shall allow the user to view
+the details of a screen
+
+Contacts Screen:The Contacts menu shall display contact quick looks and
+allow for editing contacts
+
+Search Screen:The Search menu shall allow the user to search through the
+database with the search bar.
+
+Settings Screen:The Settings menu shall allow the user the ability to
+import/export JSON format memories.
+
+Backend Screen:The Beckend shall allow synchronization between caregiver
+and care receiver data
+
+\subsection{External Interface
+Requirements}\label{external-interface-requirements}
+
+Not Applicable
+
+\subsection{Design Constraints}\label{design-constraints}
+
+Interfaces need to be able to display information clearly.
+
+Various different devices may need to be adapted into different factors
+for mobile or desktop
+
+\subsection{Nonfunctional
+Requirements}\label{nonfunctional-requirements}
+
+\subsubsection{Performance}\label{performance}
+
+Notifications need to be done on time when they schedule. Delays should
+be more than 1 minute and ideally should be instant.
+
+\subsubsection{Security}\label{security}
+
+Currently as a offline software Want2remember shouldn't need to many
+security requirements however, if online components are to be made there
+should be more security requirements should be planned
+
+\subsection{Other Requirements}\label{other-requirements}
+
+\subsubsection{Legal Requirements}\label{legal-requirements}
+
+Want2remember should be secure and protective of user data.
+
+Only users should be able to access personal data of their reminders.
+
+Personal Data should only be shared with users consent
+
+\subsubsection{Ethical Requirements}\label{ethical-requirements}
+
+Want2remeber purpose is to help cognitive impaired individuals every
+aspect of the program to accommodate their needs.
+
+User data must be secure only shared with consent of the user
+
+\section{Appendixes}\label{appendixes}
+
+\end{document}

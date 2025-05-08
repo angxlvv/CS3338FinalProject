@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<run>
+	<id>R4</id>
+	<name>Want2Remeber Smoke Test 1</name>
+	<description></description>
+	<config></config>
+	<createdon>2025-04-27T00:33:16Z</createdon>
+		<completed>false</completed>
+		<milestone></milestone>
+	<stats>
+										<passed>
+			<percent>50</percent>
+			<count>2</count>
+		</passed>
+											<blocked>
+			<percent>0</percent>
+			<count>0</count>
+		</blocked>
+											<untested>
+			<percent>0</percent>
+			<count>0</count>
+		</untested>
+											<retest>
+			<percent>25</percent>
+			<count>1</count>
+		</retest>
+											<failed>
+			<percent>25</percent>
+			<count>1</count>
+		</failed>
+																																																				</stats>	<sections>
+	<section>
+		<name>Want2Remember</name>
+		<description>Reminder Component
+
+The Reminder Class that contains:
+
+String: The contents of the reminder alert
+
+Time: A time slot that the reminder will be active</description>
+						<tests>
+						            																																																			<test>
+				<id>T14</id>
+				<title>Reminder Component</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references>
+																				<custom>
+															<automation_type><id>0</id><value> None</value></automation_type>
+															<preconds>Test the Reminder components alert feature.
+
+Test script must have the reminder Component imported.</preconds>
+															<steps>Step 1)
+Use the python script to create three reminder objects
+ 
+Create A reminder with String &quot;test30seconds&quot; with time set to 30 seconds
+
+Create A reminder with String &quot;test2minutes&quot; with time set to 2 minutes
+
+
+Create A reminder with String &quot;1 Hour&quot; with time set to 1 Hour
+</steps>
+															<expected>All alerts should display a message in the python terminal stating alert successful</expected>
+									</custom>
+												<caseid>C6</caseid>
+																			<casestatus></casestatus>
+																<caseassignedto></caseassignedto>
+																	<status>Passed</status>
+																<assignedto>Charlie Kaing</assignedto>
+																<inprogress></inprogress>
+																																																																																						<changes>
+															<change>
+						<createdon>2025-04-27T00:33:44Z</createdon>
+																		<createdby>Charlie Kaing</createdby>
+												<status>Passed</status>
+												<assignedto></assignedto>
+												<comment>All reminders have been shown in the terminal correctly</comment>
+																		<version></version>
+																														<elapsed></elapsed>
+																														<defects></defects>
+																													</change>
+															<change>
+						<createdon>2025-04-27T00:33:16Z</createdon>
+																		<createdby>Charlie Kaing</createdby>
+												<status>Untested</status>
+																								<assignedto>Charlie Kaing</assignedto>
+																		<comment></comment>
+																		<version></version>
+																														<elapsed></elapsed>
+																														<defects></defects>
+																													</change>
+									</changes>
+			</test>
+									            																																																			<test>
+				<id>T15</id>
+				<title>GUI Component</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references>
+																				<custom>
+															<automation_type><id>0</id><value> None</value></automation_type>
+															<preconds>Python main file should have imported Tkinter and the reminder component</preconds>
+															<steps>Step 1)  Test Create a reminder GUI
+Create two reminders using the Create Reminder Button on the GUI
+Step 2) Test Remove Reminder
+A remove button displayed on the reminders when hovered over
+Step 3) Test Scrollwheel on reminder panel
+Create 20 or enough reminders set 24 hours to test if the scrollwheel displays when theres a overflow of reminder in to viewing panel</steps>
+															<expected>1)
+Reminders should be displayed
+2)
+Reminder should be removed once the remove button has been clicked on
+3)
+Scrollwheel appears when the display panel is overflows</expected>
+									</custom>
+												<caseid>C7</caseid>
+																			<casestatus></casestatus>
+																<caseassignedto></caseassignedto>
+																	<status>Retest</status>
+																<assignedto>Charlie Kaing</assignedto>
+																<inprogress></inprogress>
+																																																																																						<changes>
+															<change>
+						<createdon>2025-04-27T00:45:40Z</createdon>
+																		<createdby>Charlie Kaing</createdby>
+												<status>Retest</status>
+												<assignedto></assignedto>
+												<comment>Some functionality is not working</comment>
+																		<version></version>
+																														<elapsed></elapsed>
+																														<defects></defects>
+																													</change>
+															<change>
+						<createdon>2025-04-27T00:33:16Z</createdon>
+																		<createdby>Charlie Kaing</createdby>
+												<status>Untested</status>
+																								<assignedto>Charlie Kaing</assignedto>
+																		<comment></comment>
+																		<version></version>
+																														<elapsed></elapsed>
+																														<defects></defects>
+																													</change>
+									</changes>
+			</test>
+									            																																																			<test>
+				<id>T16</id>
+				<title>Alert Sound test</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references>
+																				<custom>
+															<automation_type><id>0</id><value> None</value></automation_type>
+															<preconds>Three different sound for several priorities assigned to each reminder.
+Low priority, Medium priority, High Priority</preconds>
+															<steps>Step 1) 
+Create alert for low priority with 10 seconds ahead
+Step 2)
+Create alert for medium priority with 20 seconds ahead
+Step 3)
+Create alert for high Priority with 30 seconds ahead
+Step 4)
+Wait 30 see if the sounds have played
+
+</steps>
+															<expected>All sounds should play </expected>
+									</custom>
+												<caseid>C8</caseid>
+																			<casestatus></casestatus>
+																<caseassignedto></caseassignedto>
+																	<status>Passed</status>
+																<assignedto>Charlie Kaing</assignedto>
+																<inprogress></inprogress>
+																																																																																						<changes>
+															<change>
+						<createdon>2025-04-27T00:45:49Z</createdon>
+																		<createdby>Charlie Kaing</createdby>
+												<status>Passed</status>
+												<assignedto></assignedto>
+												<comment>Sound plays</comment>
+																		<version></version>
+																														<elapsed></elapsed>
+																														<defects></defects>
+																													</change>
+															<change>
+						<createdon>2025-04-27T00:33:16Z</createdon>
+																		<createdby>Charlie Kaing</createdby>
+												<status>Untested</status>
+																								<assignedto>Charlie Kaing</assignedto>
+																		<comment></comment>
+																		<version></version>
+																														<elapsed></elapsed>
+																														<defects></defects>
+																													</change>
+									</changes>
+			</test>
+									            																																																			<test>
+				<id>T17</id>
+				<title>Phone integration</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																<estimate></estimate>
+																								<references></references>
+																				<custom>
+															<automation_type><id>0</id><value> None</value></automation_type>
+															<preconds>Phone must have the ability to receive SMS messages</preconds>
+															<steps>Create a reminder with the ability to send SMS messages
+Step 1)
+GUI should have a create phone message
+Step 2)
+Create a reminder for 10 seconds and attach phone number
+Step 3)
+Wait and check for SMS message</steps>
+															<expected>A SMS message should be recieved.</expected>
+									</custom>
+												<caseid>C9</caseid>
+																			<casestatus></casestatus>
+																<caseassignedto></caseassignedto>
+																	<status>Failed</status>
+																<assignedto>Charlie Kaing</assignedto>
+																<inprogress></inprogress>
+																																																																																						<changes>
+															<change>
+						<createdon>2025-04-27T00:45:57Z</createdon>
+																		<createdby>Charlie Kaing</createdby>
+												<status>Failed</status>
+												<assignedto></assignedto>
+												<comment>Not working</comment>
+																		<version></version>
+																														<elapsed></elapsed>
+																														<defects></defects>
+																													</change>
+															<change>
+						<createdon>2025-04-27T00:33:16Z</createdon>
+																		<createdby>Charlie Kaing</createdby>
+												<status>Untested</status>
+																								<assignedto>Charlie Kaing</assignedto>
+																		<comment></comment>
+																		<version></version>
+																														<elapsed></elapsed>
+																														<defects></defects>
+																													</change>
+									</changes>
+			</test>
+								</tests>
+							</section>
+</sections>
+</run>
