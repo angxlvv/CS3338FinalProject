@@ -1,0 +1,568 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+]{article}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+
+Group 5
+
+\begin{quote}
+\textbf{Want2Remember}
+
+Software Design Document
+
+Name (s): Charlie Kaing, Danielle Garcia,Daniel Moncada Santana, Angel
+Villagomez, Pablo Gonzalez Dominguez Lab Section:3338-02
+
+Workstation:
+
+Date: (05/02/2025)
+\end{quote}
+
+Table of
+Contents..............................................................................................................\textless pg
+\#2\textgreater{}
+
+1.
+Introduction..................................................................................................................\textless pg
+\#3\textgreater{}
+
+1.1.
+Purpose...........................................................................................................\textless pg
+\#3\textgreater{}
+
+1.2.
+Scope\ldots\ldots\ldots\ldots\ldots\ldots\ldots\ldots.............................................................................\textless pg
+\#3\textgreater{}
+
+1.3.
+Overview.........................................................................................................\textless pg
+\#3\textgreater{}
+
+1.4. Reference
+Material........................................................................................\textless pg
+\#3\textgreater{}
+
+1.5. Definitions and
+Acronyms............................................................................\textless pg
+\#3\textgreater{}
+
+2.Design
+Considerations...................................................................................................\textless pg
+\#4\textgreater{}
+
+3. System
+Architecture.....................................................................................................\textless pg
+\#5\textgreater{}
+
+3.1. Architectural
+Design......................................................................................\textless pg
+\#5\textgreater{}
+
+3.2. Decomposition
+Description...........................................................................\textless pg
+\#5\textgreater{}
+
+3.3. Design
+Rationale............................................................................................\textless pg
+\#5\textgreater{}
+
+4. Data
+Design...................................................................................................................\textless pg
+\#5\textgreater{}
+
+4.1.Data
+Description.............................................................................................\textless pg
+\#5\textgreater{}
+
+4.2.Data
+Dictionary..............................................................................................\textless pg
+\#5\textgreater{}
+
+5. Componet
+Design.......................................................................................................\textless pg
+\#6\textgreater{}
+
+6. Detailed System
+Design..............................................................................................\textless pg
+\#6\textgreater{}
+
+6.1.
+Responsibilities..............................................................................................\textless pg
+\#6\textgreater{}
+
+6.2.
+Constrants......................................................................................................\textless pg
+\#6\textgreater{}
+
+6.3.Compoition....................................................................................................\textless pg
+\#6\textgreater{}
+
+7. Requirements
+Matrix....................................................................................................\textless pg
+\#7\textgreater{}
+
+8.
+Appendices....................................................................................................................\textless pg
+\#7\textgreater{}
+
+\textbf{Revision History}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1793}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1810}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.5220}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1178}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\centering
+Name
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Date
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Reason For Changes
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Version
+\end{minipage} \\
+\begin{minipage}[b]{\linewidth}\centering
+Charlie
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+3-23
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Added format and started adding information to all sections
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+1.1
+\end{minipage} \\
+\begin{minipage}[b]{\linewidth}\centering
+Danielle
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+4-5
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Added to sections 1- 5
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+1.2
+\end{minipage} \\
+\begin{minipage}[b]{\linewidth}\centering
+Daniel
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+5-5
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Added to sections 7-8
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+1.3
+\end{minipage} \\
+\begin{minipage}[b]{\linewidth}\centering
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\end{longtable}
+
+\textbf{1. INTRODUCTION}
+
+\begin{quote}
+\textbf{1.1 Purpose}
+
+This Software Design Document is to provide the documentation for the
+Want2Remember app for CS3338. This includes scope, references and API
+used for the development of this project. The purpose is to breakdown,
+analyze and document the workflow used in the creation of the app
+Want2Remeber.
+
+\textbf{1.2 Scope}
+
+This document provides an overview of the design and development of
+Want2Remember including available resources and procedures for the
+developers. It will focus on the development of Want2Remember, not so
+much its functionality. This project aims to explore the tools used for
+development such as Github and GitHub.
+
+\textbf{1.3 Overview}
+\end{quote}
+
+The Want2Remember project is a web and mobile application made to assist
+users with any memory related challenges by helping them store memories,
+contacts, reminders, or personal data. Want2Remeber uses Components
+based architecture to allow for modularity in its reuse and complexity.
+This document attempts to model how the development team may have
+organized their work and responsibilities during its creation.
+
+\begin{quote}
+\textbf{1.4 Reference Material}
+
+List any documents, if any, which were used as sources of information
+for the test plan.
+\end{quote}
+
+\begin{itemize}
+\item
+  Want2Remember Software Design Document
+\item
+  Want2Remember Software Requirements Specification
+\item
+  Want2Remeber Testrail report
+\end{itemize}
+
+\begin{quote}
+\textbf{1.5 Definitions and Acronyms}
+
+Provide definitions of all terms, acronyms, and abbreviations that might
+exist to properly interpret the SDD. These definitions should be items
+used in the SDD that are most likely not known to the audience.
+\end{quote}
+
+\begin{itemize}
+\item
+  SDD: Software Development Document
+\item
+  SRS: Software Requirements Specifications
+\item
+  UI: User Interface
+\end{itemize}
+
+\begin{quote}
+\textbf{2. Design Considerations}
+
+The team behind Want2Remember used more modern software development
+practices that are used in academic and industry-sponsored settings. The
+application was built over the span of several months and involved using
+agile principles with multiple coders/engineers working on separate
+components
+
+\textbf{2.1 Assumptions and dependencies}
+
+The current software that we are planning to use is:
+\end{quote}
+
+\begin{itemize}
+\item
+  Python
+\item
+  Tkinter
+\item
+  Github
+\item
+  TestRail
+\end{itemize}
+
+Software original creators used:
+
+\begin{itemize}
+\item
+  GitHub
+\item
+  FireBase
+\item
+  Visual Studio Code
+\item
+  React/React Native
+\item
+  Jira
+\end{itemize}
+
+\begin{quote}
+\textbf{2.2 General Constraints}
+\end{quote}
+
+\begin{itemize}
+\item
+  No direct access to code or team sprint progress
+\item
+  Limited information on team communication apart from where conducted
+\item
+  As a project based on replication we cannot fully replicate the team
+  structure or any changes over time
+\end{itemize}
+
+\begin{quote}
+\textbf{2.3 Goals and Guidelines}
+
+The goal of this project is to learn about the uses of software
+engineering tools such as github in a team. We hope to identify the
+relationships between the components and responsibilities while also
+learning how a professional development is managed in a more
+collaborative environment.
+
+\textbf{3. SYSTEM ARCHITECTURE}
+
+\textbf{3.1 Architectural Design}
+\end{quote}
+
+\begin{itemize}
+\item
+  Reminders Component: The reminders are stored as a data type that can
+  interfaced with other components
+\item
+  GUI Component: Contains libraries and software to create the GUI
+  interface.
+\item
+  Time Component: Keeps track of calendar reminders may be a sub
+  component of Reminders
+\item
+  Contacts
+\end{itemize}
+
+\begin{quote}
+\textbf{4. System Architecture}
+
+\textbf{4.1 Data Description}
+
+The current plans for storage are to at first use a standard list to
+store reminders and to retrieve them. We are also investigating our data
+structure that may improve our project performance such as trees and
+database integration such as mongoDB or mysql to have persistence.
+
+\textbf{4.2 Architecture Diagram}
+\end{quote}
+
+\includegraphics[width=4.73022in,height=2.65978in]{media/image1.png}
+
+\begin{quote}
+\textbf{5. Policies and Tactics}
+
+\textbf{5.1 Tools used}
+\end{quote}
+
+\begin{itemize}
+\item
+  Version Control:
+\item
+  Github
+\end{itemize}
+
+\begin{itemize}
+\item
+  Jira
+\item
+  Editor:
+\item
+  Visual Studio Code
+\end{itemize}
+
+\begin{quote}
+\textbf{6. Detailed System Design}
+
+\textbf{6.1 Responsibilities}
+
+GUI Component: The GUI component is responsible for all Graphic
+interfaces code such libraries and interfaces to other components and
+allows extensions of additional functionality to future components.
+\end{quote}
+
+\begin{itemize}
+\item
+  \textbf{Reminder Components:} Manages reminder times, tags, and any
+  associated memory data
+\item
+  \textbf{GUI Component}: Displays the main interface, manages any
+  routes/navigations, and renders the notifications
+\item
+  \textbf{Data Component:} Handles the reading/writing to firebase
+\end{itemize}
+
+\begin{quote}
+\textbf{6.2 Constraints}
+
+Want2Remember currently does not have any persistence or storage when
+the program closes all reminders and schedules are deleted.
+
+\textbf{6.3 Composition}
+\end{quote}
+
+\begin{itemize}
+\item
+  Github is currently being used for repository storage and to help with
+  collaboration of multiple members of the team.
+\item
+  Communication was done/occured on Discord
+\item
+  Jira was used to assign, track, and manage any team assigned tasks
+\end{itemize}
+
+\begin{quote}
+\textbf{7. REQUIREMENTS MATRIX}
+
+Provide a cross reference that traces components and data structures to
+the requirements in your SRS document. Use a tabular format to show
+which system components satisfy each of the functional requirements from
+the SRS. Refer to the functional requirements by the numbers/codes that
+you gave them in the SRS.
+\end{quote}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.1909}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2466}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.3024}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2601}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Requirement ID
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Requirement Description
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+SDD Component(s)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Data Structure(s)
+\end{minipage} \\
+\begin{minipage}[b]{\linewidth}\raggedright
+1
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Home Screen
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Reminder Component, GUI Component
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Python List of reminder objects
+\end{minipage} \\
+\begin{minipage}[b]{\linewidth}\raggedright
+2
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Create screen
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Reminder Component, GUI Component Time Component
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Python Dictionary and Python List
+\end{minipage} \\
+\begin{minipage}[b]{\linewidth}\raggedright
+3
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Edit Screen
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Reminder Component, Time Component
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Python List of the different Dictionaries
+\end{minipage} \\
+\begin{minipage}[b]{\linewidth}\raggedright
+4
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+More Details Screen
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Reminder Component, GUI
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Python List of reminder objects
+\end{minipage} \\
+\begin{minipage}[b]{\linewidth}\raggedright
+5
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Contacts Screen
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Contacts Component
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Python Dictionary and Python List
+\end{minipage} \\
+\begin{minipage}[b]{\linewidth}\raggedright
+6
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Search Screen
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Reminder Component, GUI Component, Cloud Firebase
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Firebase Query
+\end{minipage} \\
+\begin{minipage}[b]{\linewidth}\raggedright
+7
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Settings Screen
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+GUI Component
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+JSON or Config files
+\end{minipage} \\
+\begin{minipage}[b]{\linewidth}\raggedright
+8
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Backend Service
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Cloud (Firebase)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Firebase Cloud
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\end{longtable}
+
+\begin{quote}
+\textbf{8. APPENDICES}
+
+Appendices may be included, either directly or by reference, to provide
+supporting details that could aid in the understanding of the Software
+Design Document. F
+\end{quote}
+
+\end{document}
