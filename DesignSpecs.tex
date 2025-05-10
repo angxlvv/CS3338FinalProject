@@ -1,3 +1,45 @@
-Python Libraries:
-Schedule Library: Used to schedule alerts to at specific times and to have them in intervals
-Tkinter: GUI library
+%% Design Specification
+\documentclass{article}
+\usepackage{geometry}
+\geometry{margin=1in}
+\title{Want2Remember Project: Design Specification}
+\author{Team 5: Danielle Garcia, Charlie Kaing,Daniel Moncada Santana, 
+Angel Villagomez, Pablo Gonzalez Dominguez}
+\date{May 2025}
+
+\begin{document}
+
+\maketitle
+
+\section*{Overview}
+This design specification describes the structure, components, tools, and dependencies of the project modeled after the Want2Remember senior design project.
+
+\section*{Component Breakdown}
+\begin{itemize}
+\item \textbf{GUI Component}: This manages the interface views like home, create, edit, contacts, more details, and settings).
+\item \textbf{Reminder Component}: This handles the logic and data for storing the reminders.
+\item \textbf{Contact Component}: This stores and manages any of the user contact data.
+\item \textbf{Time Component}: This controls the scheduling and tagging of the set of reminders.
+\item \textbf{Data Component}: This is the interfaces with a database (like Firebase) for contuined data storage.
+\end{itemize}
+
+\section*{Libraries and Packages}
+\begin{itemize}
+\item Python 3.11
+\item Tkinter(GUI library)
+\item Schedule Library(Used to schedule alerts to at specific times and to have them in intervals)
+\item Firebase Admin SDK 
+\item JSON module 
+\item React/React Native 
+
+\end{itemize}
+
+\section*{Docker Container Requirements}
+\begin{itemize}
+\item \textbf{Base Image:} python:3.11
+\item \textbf{Installed Libraries:} tkinter,firebase admin
+\item \textbf{Ports:} 3000, 5000 
+\item \textbf{Other Tools:} Git, Node.js , MongoDB 
+\end{itemize}
+
+\end{document}
